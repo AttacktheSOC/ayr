@@ -11,6 +11,9 @@ _site/
 _preview/
 _pv*/
 
+# Claude files
+.claude/
+
 # Local safety backups
 .redesign-backup/
 
