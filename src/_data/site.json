@@ -1,5 +1,34 @@
 {
   "title": "In Defense of Defenders",
-  "description": "Practical cybersecurity for human rights defenders, journalists, and activists.",
-  "url": "https://idod.attackthesoc.com"
+  "shortName": "IDOD",
+  "description": "Practical, low-bandwidth cybersecurity support for human rights defenders, journalists, activists, and the small organizations that protect them.",
+  "tagline": "Security in solidarity",
+  "url": "https://indefenseofdefenders.org",
+  "author": "Dylan Tenebruso",
+  "nav": [
+    {
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "label": "Resources",
+      "url": "/resources/"
+    },
+    {
+      "label": "Research",
+      "url": "/research/"
+    },
+    {
+      "label": "Security help",
+      "url": "/help/"
+    },
+    {
+      "label": "Blog",
+      "url": "/blog/"
+    },
+    {
+      "label": "Contact",
+      "url": "/contact/"
+    }
+  ]
 }

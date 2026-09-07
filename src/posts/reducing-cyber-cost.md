@@ -7,6 +7,9 @@ tags:
   - posts
   - Template
 excerpt: "A structured workflow for translating published threat campaigns into portable Sigma and KQL detections your team can deploy immediately."
+draft: true
+eleventyExcludeFromCollections: true
+permalink: false
 ---
 
 Provide a plain-language overview of the threat, who is targeted, and what practical actions defenders can take immediately.

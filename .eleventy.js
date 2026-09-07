@@ -2,6 +2,7 @@ module.exports = function (eleventyConfig) {
   // Pass assets directory through unaltered
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/CNAME");
+  eleventyConfig.addPassthroughCopy("src/favicon.ico");
 
   // Reverse-sorted posts collection (newest first)
   eleventyConfig.addCollection("posts", function (collectionApi) {

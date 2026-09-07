@@ -4,66 +4,139 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="{{ description or site.description }}" />
-    <title>{% if title %}{{ site.title }} | {{ title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="color-scheme" content="light dark" />
+    <title>{% if title %}{{ site.title }} | {{ title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}</title>
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta property="og:description" content="{{ description or site.description }}" />
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+    <meta property="og:image" content="{{ site.url }}/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta name="twitter:description" content="{{ description or site.description }}" />
+    <meta name="twitter:image" content="{{ site.url }}/assets/og-image.png" />
+
+    <link rel="icon" href="{{ '/assets/favicon.svg' | url }}" type="image/svg+xml" />
+    <link rel="icon" href="{{ '/assets/favicon-32.png' | url }}" sizes="32x32" type="image/png" />
+    <link rel="icon" href="{{ '/favicon.ico' | url }}" sizes="any" />
+    <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | url }}" />
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('IDOD-theme');
+          if (t) document.documentElement.dataset.theme = t;
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="site-header">
       <div class="container">
-        <a class="logo" href="{{ '/' | url }}" aria-label="{{ site.title }} home">{{ site.title }}</a>
-        <nav aria-label="Primary navigation">
-          <ul class="nav-list">
-            <li>
-              <a href="{{ '/' | url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
-            </li>
-            <li>
-              <a href="{{ '/resources/' | url }}"{% if page.url == '/resources/' %} aria-current="page"{% endif %}>Tools &amp; Resources</a>
-            </li>
-            <li>
-              <a href="{{ '/blog/' | url }}"{% if page.url == '/blog/' or page.url.startsWith('/posts/') %} aria-current="page"{% endif %}>Blog</a>
-            </li>
-            <li>
-              <a href="{{ '/contact/' | url }}"{% if page.url == '/contact/' %} aria-current="page"{% endif %}>Contact &amp; Submissions</a>
-            </li>
-          </ul>
-        </nav>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
-          <span aria-hidden="true" id="theme-icon">&#9790;</span>
-        </button>
+        <a class="brand" href="{{ '/' | url }}" aria-label="{{ site.title }} home">
+          <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2.5 4 5.2v6.1c0 4.7 3.2 8.1 8 10.2 4.8-2.1 8-5.5 8-10.2V5.2L12 2.5Z" fill="currentColor" opacity="0.12"/>
+            <path d="M12 2.5 4 5.2v6.1c0 4.7 3.2 8.1 8 10.2 4.8-2.1 8-5.5 8-10.2V5.2L12 2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M12 8.2c-.9-1.5-3.4-1.3-3.4 1 0 1.7 2.1 3.2 3.4 4 1.3-.8 3.4-2.3 3.4-4 0-2.3-2.5-2.5-3.4-1Z" fill="currentColor"/>
+          </svg>
+          <span class="brand-text">
+            <span class="brand-name">In Defense of Defenders</span>
+            <span class="brand-tag">{{ site.tagline }}</span>
+          </span>
+        </a>
+
+        <div class="nav-wrap">
+          <nav aria-label="Primary">
+            <ul class="nav-list">
+              {% for item in site.nav %}
+              <li>
+                <a href="{{ item.url | url }}"{% if page.url == item.url or (item.url == '/blog/' and page.url and page.url.startsWith('/posts/')) %} aria-current="page"{% endif %}>{{ item.label }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </nav>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode">
+            <span aria-hidden="true" id="theme-icon">&#9790;</span>
+          </button>
+        </div>
       </div>
     </header>
 
-    <main id="main-content" class="container">
+    <main id="main-content">
       {{ content | safe }}
     </main>
 
     <footer class="site-footer">
       <div class="container">
-        <p>{{ site.title }} (IDOD) · Fast, privacy-first support for digital rights defense.</p>
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="{{ '/' | url }}" aria-label="{{ site.title }} home">
+              <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2.5 4 5.2v6.1c0 4.7 3.2 8.1 8 10.2 4.8-2.1 8-5.5 8-10.2V5.2L12 2.5Z" fill="currentColor" opacity="0.12"/>
+                <path d="M12 2.5 4 5.2v6.1c0 4.7 3.2 8.1 8 10.2 4.8-2.1 8-5.5 8-10.2V5.2L12 2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M12 8.2c-.9-1.5-3.4-1.3-3.4 1 0 1.7 2.1 3.2 3.4 4 1.3-.8 3.4-2.3 3.4-4 0-2.3-2.5-2.5-3.4-1Z" fill="currentColor"/>
+              </svg>
+              <span class="brand-text">
+                <span class="brand-name">In Defense of Defenders</span>
+              </span>
+            </a>
+            <p>Practical, low-bandwidth security support for the people and organizations defending human rights and civil society.</p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="{{ '/resources/' | url }}">Tools &amp; resources</a></li>
+              <li><a href="{{ '/research/' | url }}">Research &amp; news</a></li>
+              <li><a href="{{ '/help/' | url }}">Security help for nonprofits</a></li>
+              <li><a href="{{ '/blog/' | url }}">Blog</a></li>
+              <li><a href="{{ '/contact/' | url }}">Contact &amp; submissions</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Start here</h4>
+            <ul>
+              <li><a href="{{ '/resources/#emergency' | url }}">In an emergency</a></li>
+              <li><a href="{{ '/resources/#opsec-tools' | url }}">Secure your comms</a></li>
+              <li><a href="{{ '/resources/#training' | url }}">Learn the basics</a></li>
+              <li><a href="https://attackthesoc.com" rel="noopener">Attack the SOC</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>{{ site.title }} ({{ site.shortName }}) · A project by {{ site.author }}.</p>
+          <p>Built to be fast, private, and accessible. No trackers, no ads. &middot; <a href="https://github.com/AttacktheSOC/idod-resources" rel="noopener noreferrer">Reference lists on GitHub</a></p>
+        </div>
       </div>
     </footer>
+
     <script>
       (function () {
         var html = document.documentElement;
         var btn  = document.getElementById('theme-toggle');
         var icon = document.getElementById('theme-icon');
-        var SUN  = '\u2600';
-        var MOON = '\u263E';
+        var SUN  = '☀';
+        var MOON = '☾';
 
         function applyTheme(theme) {
           html.dataset.theme = theme;
-          localStorage.setItem('IDOD-theme', theme);
+          try { localStorage.setItem('IDOD-theme', theme); } catch (e) {}
           icon.textContent = theme === 'dark' ? SUN : MOON;
           btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
         }
 
-        // Restore saved preference or detect system setting
-        var saved = localStorage.getItem('IDOD-theme');
+        var saved = null;
+        try { saved = localStorage.getItem('IDOD-theme'); } catch (e) {}
         var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        var initial = saved || (prefersDark ? 'dark' : 'light');
-        applyTheme(initial);
+        applyTheme(saved || (prefersDark ? 'dark' : 'light'));
 
         btn.addEventListener('click', function () {
           applyTheme(html.dataset.theme === 'dark' ? 'light' : 'dark');

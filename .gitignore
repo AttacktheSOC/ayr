@@ -1,2 +1,25 @@
+# Dependencies
 node_modules/
+
+# Eleventy build output (rebuilt in CI)
 _site/
+
+# Eleventy asset/RSS fetch cache
+.cache/
+
+# Local preview & scratch builds (never committed)
+_preview/
+_pv*/
+
+# Local safety backups
+.redesign-backup/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+npm-debug.log*
+yarn-error.log*
+.vscode/
+.idea/

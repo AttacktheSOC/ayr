@@ -1,13 +1,23 @@
 ---
 layout: base.njk
 ---
-<article aria-labelledby="post-title">
-  <h1 id="post-title">{{ title }}</h1>
-  <p class="meta">
-    <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
-    {% if readTime %} · {{ readTime }} min read{% endif %}
-    {% for tag in tags %}{% if tag != "posts" %} · <span class="tag">{{ tag }}</span>{% endif %}{% endfor %}
-  </p>
+<section class="section">
+  <div class="container">
+    <article class="post-article" aria-labelledby="post-title">
+      <p style="margin-bottom: var(--space-2)"><a href="{{ '/blog/' | url }}">&larr; Back to the blog</a></p>
+      <h1 id="post-title">{{ title }}</h1>
+      <p class="meta">
+        <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+        {% if readTime %} · {{ readTime }} min read{% endif %}
+        {% for tag in tags %}{% if tag != "posts" %} · <span class="tag">{{ tag }}</span>{% endif %}{% endfor %}
+      </p>
 
-  {{ content | safe }}
-</article>
+      {{ content | safe }}
+
+      <hr />
+      <div class="callout callout-warm" role="note">
+        <p><strong>Need help applying any of this?</strong> Small nonprofits and defenders can <a href="{{ '/help/' | url }}">ask for hands-on support</a>, or browse the <a href="{{ '/resources/' | url }}">resource directory</a>.</p>
+      </div>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,66 @@
+{
+  "note": "Edit this file to add or reorder sources. Each entry: name, url, kind, focus, optional region. 'kind' controls the badge and grouping label.",
+  "sources": [
+    {
+      "name": "Citizen Lab",
+      "url": "https://citizenlab.ca/",
+      "kind": "Research lab",
+      "focus": "Landmark research on targeted spyware and digital threats against civil society, journalists, and activists."
+    },
+    {
+      "name": "Amnesty International Security Lab",
+      "url": "https://securitylab.amnesty.org/",
+      "kind": "Research lab",
+      "focus": "Forensic investigations of spyware attacks, plus open tooling to help people check their own devices."
+    },
+    {
+      "name": "EFF Deeplinks",
+      "url": "https://www.eff.org/deeplinks",
+      "kind": "Investigative & advocacy",
+      "focus": "Continuous reporting on surveillance, license-plate readers, and digital rights from the Electronic Frontier Foundation."
+    },
+    {
+      "name": "404 Media \u2014 Flock coverage",
+      "url": "https://www.404media.co/tag/flock/",
+      "kind": "Investigative journalism",
+      "focus": "Deep, ongoing reporting on Flock Safety and police surveillance technology \u2014 the reporting that prompted a Congressional inquiry."
+    },
+    {
+      "name": "DeFlock",
+      "url": "https://maps.deflock.org/",
+      "kind": "Surveillance tracker",
+      "focus": "A crowd-sourced, open map of automated license-plate-reader (ALPR) cameras, built to make invisible surveillance visible."
+    },
+    {
+      "name": "Surveillance Watch",
+      "url": "https://www.surveillancewatch.io/",
+      "kind": "Surveillance tracker",
+      "focus": "An interactive map exposing the surveillance-technology industry and the money behind it."
+    },
+    {
+      "name": "Atlas of Surveillance",
+      "url": "https://atlasofsurveillance.org/",
+      "kind": "Surveillance tracker",
+      "focus": "A searchable database of surveillance tech deployed by US law enforcement.",
+      "region": "US-focused"
+    },
+    {
+      "name": "OONI",
+      "url": "https://ooni.org/",
+      "kind": "Censorship measurement",
+      "focus": "Data-driven findings on internet censorship and network interference from around the world."
+    },
+    {
+      "name": "Access Now",
+      "url": "https://www.accessnow.org/",
+      "kind": "Advisories & campaigns",
+      "focus": "News, rapid-response updates, and the #KeepItOn campaign tracking internet shutdowns."
+    },
+    {
+      "name": "Tor Project blog",
+      "url": "https://blog.torproject.org/",
+      "kind": "Anti-censorship tooling",
+      "focus": "Release notes and updates from the Tor Project and Tails \u2014 circumvention and anonymity tools."
+    }
+  ]
+}

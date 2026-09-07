@@ -1,9 +1,17 @@
 name: Deploy to GitHub Pages
 
 on:
+  # Deploy on every push to main
   push:
     branches:
       - main
+  # Refresh the auto-generated Research & News feed twice daily
+  # (rebuilds the site so the RSS feed is re-fetched). Times are UTC.
+  schedule:
+    - cron: "0 11 * * *"   # ~06:00/07:00 America/New_York
+    - cron: "0 23 * * *"   # ~18:00/19:00 America/New_York
+  # Allow manual runs from the Actions tab
+  workflow_dispatch:
 
 permissions:
   contents: read
