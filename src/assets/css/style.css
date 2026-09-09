@@ -672,5 +672,6 @@ form button { justify-self: start; }
 }
 
 /* ---------------- RESEARCH FEED META ---------------- */
-.feed-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-top: 0.4rem; }
+.resource-list.feed-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); }
+.resource-list .res-desc.feed-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-top: 0.4rem; }
 .feed-meta time { color: var(--muted); font-size: 0.88rem; font-variant-numeric: tabular-nums; }

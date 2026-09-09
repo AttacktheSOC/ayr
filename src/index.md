@@ -18,7 +18,7 @@ templateEngineOverride: njk,md
         </a>
         <a class="btn btn-ghost" href="{{ '/help/' | url }}">Get security help</a>
       </div>
-      <p class="hero-note">Free to use. No account, no tracking, no ads</p>
+      <p class="hero-note">Free to use. No account. No tracking.</p>
     </div>
   </div>
 </section>
@@ -27,7 +27,7 @@ templateEngineOverride: njk,md
   <div class="container">
     <div class="emergency" role="note">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      <p><strong>In a crisis right now?</strong> If an account, device, or organization is under active attack, start with <a href="{{ '/resources/#emergency' | url }}">emergency &amp; rapid-response help</a>. For anything highly sensitive, reach out over an encrypted channel — not a web form.</p>
+      <p><strong>In a crisis right now?</strong> If an account, device, or organization is under active attack, start with <a href="{{ '/resources/#emergency' | url }}">emergency &amp; rapid-response help</a>. For anything highly sensitive, reach out over an encrypted channel.</p>
     </div>
   </div>
 </section>
@@ -48,7 +48,7 @@ templateEngineOverride: njk,md
       <a class="card card-link feature warm" href="{{ '/help/' | url }}">
         <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
         <h3>A hand for small nonprofits</h3>
-        <p>Informal, no-cost security help for tiny organizations that can't afford an incident — offered by one practitioner when there's capacity, never sold as a service.</p>
+        <p>Informal, no-cost security help for smaller organizations that can't afford an incident — offered by one practitioner when there's capacity.</p>
       </a>
       <a class="card card-link feature" href="{{ '/blog/' | url }}">
         <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>

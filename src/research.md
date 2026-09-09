@@ -2,7 +2,7 @@
 layout: base.njk
 title: Research & News
 description: "An automatically-updated feed of the latest research, investigations, and releases at the intersection of surveillance technology, digital rights, and information security."
-templateEngineOverride: njk,md
+templateEngineOverride: njk
 ---
 
 <section class="hero">
@@ -24,7 +24,7 @@ templateEngineOverride: njk,md
     </div>
 
     {% if feed.items and feed.items.length %}
-    <ul class="resource-list cols">
+    <ul class="resource-list feed-list">
       {% for item in feed.items %}
       <li>
         <a href="{{ item.link }}" rel="noopener noreferrer">{{ item.title }}</a>
